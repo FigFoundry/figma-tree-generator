@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/planetabhi/figma-plugin-react.git"
+    "url": "git+https://github.com/planetabhi/figma-tree-generator.git"
   },
   "keywords": [
     "figma",
@@ -28,9 +28,9 @@
   "author": "@planetabhi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/planetabhi/figma-plugin-react/issues"
+    "url": "https://github.com/planetabhi/figma-tree-generator/issues"
   },
-  "homepage": "https://github.com/planetabhi/figma-plugin-react#readme",
+  "homepage": "https://github.com/planetabhi/figma-tree-generator#readme",
   "dependencies": {
     "react": "19.0.0",
     "react-dom": "19.0.0",
