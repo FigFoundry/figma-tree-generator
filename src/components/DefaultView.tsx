@@ -7,8 +7,7 @@ const DefaultView: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
   const [maxDepth, setMaxDepth] = useState<number>(-1); // -1 means no limit
-  const [showTypes, setShowTypes] = useState<boolean>(false); // New state for showing types
-  const [showDepthOptions, setShowDepthOptions] = useState<boolean>(false);
+  const [showTypes, setShowTypes] = useState<boolean>(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const DefaultView: React.FC = () => {
     const message: UIMessage = {
       type: 'generate-layers-tree',
       maxDepth: maxDepth,
-      showTypes: showTypes // Pass the showTypes state
+      showTypes: showTypes
     };
     
     parent.postMessage({ pluginMessage: message }, '*');
@@ -51,72 +50,57 @@ const DefaultView: React.FC = () => {
     }
   };
 
-  const handleMaxDepthChange = (value: number) => {
-    setMaxDepth(value);
-    setShowDepthOptions(false);
-  };
-
-  // Get the display text for the current depth setting
-  const getDepthDisplayText = () => {
-    if (maxDepth === -1) return "All levels";
-    if (maxDepth === 0) return "Top level only";
-    return `Up to ${maxDepth} ${maxDepth === 1 ? 'level' : 'levels'}`;
+  const handleMaxDepthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setMaxDepth(parseInt(e.target.value, 10));
   };
 
   return (
     <div className="default-view">
-      <div className="content">        
-        <div className="options">
+      <section className="options-section">
+        <div className="form-controls">
           <div className="depth-selector">
-            <label>Nesting depth:</label>
-            <div className="dropdown">
-              <button 
-                className="dropdown-toggle" 
-                onClick={() => setShowDepthOptions(!showDepthOptions)}
-              >
-                {getDepthDisplayText()}
-                <span className="arrow-down">▼</span>
-              </button>
-              
-              {showDepthOptions && (
-                <div className="dropdown-menu">
-                  <button onClick={() => handleMaxDepthChange(-1)}>All levels</button>
-                  <button onClick={() => handleMaxDepthChange(0)}>Top level only</button>
-                  <button onClick={() => handleMaxDepthChange(1)}>Up to 1 level</button>
-                  <button onClick={() => handleMaxDepthChange(2)}>Up to 2 levels</button>
-                  <button onClick={() => handleMaxDepthChange(3)}>Up to 3 levels</button>
-                  <button onClick={() => handleMaxDepthChange(4)}>Up to 4 levels</button>
-                  <button onClick={() => handleMaxDepthChange(5)}>Up to 5 levels</button>
-                </div>
-              )}
-            </div>
+            <label htmlFor="depth-select"></label>
+            <select 
+              id="depth-select"
+              value={maxDepth}
+              onChange={handleMaxDepthChange}
+              className="depth-select"
+            >
+              <option value="-1">Nesting: All levels</option>
+              <option value="1">Nesting: Up to 1 level</option>
+              <option value="2">Nesting: Up to 2 levels</option>
+              <option value="3">Nesting: Up to 3 levels</option>
+              <option value="4">Nesting: Up to 4 levels</option>
+              <option value="5">Nesting: Up to 5 levels</option>
+            </select>
           </div>
           
-          {/* New checkbox for showing types */}
           <div className="type-selector">
             <label>
               <input 
                 type="checkbox" 
                 checked={showTypes} 
                 onChange={(e) => setShowTypes(e.target.checked)}
+                id="show-types"
               />
               Show layer types
             </label>
           </div>
+          
+          <button 
+            className="generate-button"
+            onClick={handleGenerateClick}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Generating...' : 'Generate'}
+          </button>
         </div>
-        
-        <button 
-          className="generate-button"
-          onClick={handleGenerateClick}
-          disabled={isLoading}
-        >
-          {isLoading ? 'Generating...' : 'Generate Tree'}
-        </button>
-        
-        {treeString && (
+      </section>
+      
+      {treeString && (
+        <section className="result-section">
           <div className="tree-result">
             <div className="tree-header">
-              <h3>Tree String</h3>
               <button 
                 className="copy-button"
                 onClick={handleCopyClick}
@@ -134,8 +118,8 @@ const DefaultView: React.FC = () => {
               />
             </div>
           </div>
-        )}
-      </div>
+        </section>
+      )}
     </div>
   );
 };

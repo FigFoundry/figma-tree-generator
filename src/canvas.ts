@@ -1,6 +1,6 @@
 figma.showUI(__html__, { themeColors: true, width: 400, height: 500 });
 
-// Message handler
+// Message handler for plugin communications
 figma.ui.onmessage = async (msg) => {
   if (msg.type === 'generate-layers-tree') {
     const layersTree = generateLayersTree(msg.maxDepth, msg.showTypes);
@@ -13,7 +13,7 @@ figma.ui.onmessage = async (msg) => {
   }
 };
 
-// Generate tree string
+// Generate tree string for layers with optional max depth and type display
 function generateLayersTree(maxDepth: number = -1, showTypes: boolean = false): string {
   // Get current selection or current page if nothing is selected
   const startingNode = figma.currentPage.selection.length > 0 
@@ -49,8 +49,9 @@ function buildLayerTreeString(
     treeString += isLast ? '└── ' : '├── ';
   }
   
-  // Add node name
-  treeString += node.name;
+  // Add node name or placeholder if empty
+  const displayName = node.name.trim() === '' ? `<${node.type.toLowerCase()}>` : node.name;
+  treeString += displayName;
   
   // Add node type in parentheses if showTypes is true
   if (showTypes) {
