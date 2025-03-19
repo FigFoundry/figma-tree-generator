@@ -1,6 +1,17 @@
-// Define your message types here when building your plugin.
-// Delete this file if not needed.
+export interface GenerateLayersTreeMessage {
+  type: 'generate-layers-tree';
+  maxDepth: number;
+  showTypes: boolean;
+}
 
-export type PluginMessage = {
-  type: string;
-};
+export interface CancelMessage {
+  type: 'cancel';
+}
+
+export interface LayersTreeResultMessage {
+  type: 'layers-tree-result';
+  tree: string;
+}
+
+export type UIMessage = GenerateLayersTreeMessage | CancelMessage;
+export type PluginMessage = LayersTreeResultMessage;

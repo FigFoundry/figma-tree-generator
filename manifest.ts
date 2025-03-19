@@ -1,6 +1,6 @@
 export default {
-  name: "Figma Plugin React",
-  id: "0000000000000000000",
+  name: "Generate Tree String",
+  id: "1484122561413577544",
   api: "1.0.0",
   editorType: ["figma", "figjam"],
   main: "./canvas.js",
