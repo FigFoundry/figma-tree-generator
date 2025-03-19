@@ -1,7 +1,7 @@
 {
-  "name": "figma-plugin-react",
-  "version": "2.0.3",
-  "description": "Figma plugin starter with React, Vite, and SCSS.",
+  "name": "figma-tree-generator",
+  "version": "0.1.0",
+  "description": "",
   "type": "module",
   "main": "dist/canvas.js",
   "scripts": {
@@ -20,11 +20,10 @@
     "figma",
     "figma-plugin",
     "plugin",
-    "react",
-    "starter",
-    "boilerplate",
-    "vite",
-    "scss"
+    "tree",
+    "generator",
+    "string",
+    "ascii"
   ],
   "author": "@planetabhi",
   "license": "MIT",
