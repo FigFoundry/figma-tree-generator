@@ -66,12 +66,12 @@ const DefaultView: React.FC = () => {
               onChange={handleMaxDepthChange}
               className="depth-select"
             >
-              <option value="-1">Nesting: All levels</option>
-              <option value="1">Nesting: Up to 1 level</option>
-              <option value="2">Nesting: Up to 2 levels</option>
-              <option value="3">Nesting: Up to 3 levels</option>
-              <option value="4">Nesting: Up to 4 levels</option>
-              <option value="5">Nesting: Up to 5 levels</option>
+              <option value="-1">All levels</option>
+              <option value="1">Up to 1 level</option>
+              <option value="2">Up to 2 levels</option>
+              <option value="3">Up to 3 levels</option>
+              <option value="4">Up to 4 levels</option>
+              <option value="5">Up to 5 levels</option>
             </select>
           </div>
           
