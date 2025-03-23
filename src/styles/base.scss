@@ -9,13 +9,12 @@ body {
   font-family: var(--system-ui);
   font-weight: 400;
   font-size: 0.75rem;
-  margin: 4vw;
+  margin: 2vw;
 }
 
 .default-view {
   display: flex;
   flex-direction: column;
-  height: 100%;
   
   .options-section {
     margin-bottom: 16px;
