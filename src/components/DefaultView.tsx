@@ -83,7 +83,7 @@ const DefaultView: React.FC = () => {
                 onChange={(e) => setShowTypes(e.target.checked)}
                 id="show-types"
               />
-              Layer types
+              Types
             </label>
           </div>
           

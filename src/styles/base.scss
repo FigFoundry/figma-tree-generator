@@ -29,7 +29,6 @@ body {
       .depth-selector, .type-selector {
         display: flex;
         align-items: center;
-        gap: 8px;
         
         label {
           white-space: nowrap;
@@ -37,12 +36,12 @@ body {
       }
       
       .depth-select {
-        padding: 6px;
         border: 1px solid var(--figma-color-border);
         border-radius: 4px;
         background-color: var(--figma-color-bg);
         color: var(--figma-color-text);
         font-size: 12px;
+        height: 2rem;
       }
       
       .type-selector {
