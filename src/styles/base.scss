@@ -47,13 +47,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
     border-bottom: 1px solid var(--figma-color-border);
     
     .form-controls {
       display: flex;
       align-items: center;
-      gap: 12px;
+      width: 100%;
+      gap: .5rem;
+      padding-inline: 6px;
+      padding-block: 6px;
       
       .depth-selector, .type-selector {
         display: flex;
@@ -73,6 +75,9 @@ body {
         background-position: right 0.7rem center;
         background-repeat: no-repeat;
         background-size: .65em auto;
+
+        margin: 0;
+        align-self: center;
       }
       
       .type-selector {
@@ -155,8 +160,8 @@ body {
       justify-content: center;
       flex-grow: 1;
       text-align: center;
-      padding: 20px;
       color: var(--figma-color-text-tertiary);
+      height: 100%;
       
       .empty-icon {
         width: 64px;
