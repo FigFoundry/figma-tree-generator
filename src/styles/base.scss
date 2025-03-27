@@ -193,7 +193,6 @@ textarea {
   font-size: .688rem;
   line-height: .688rem;
   letter-spacing: .005em;
-  resize: none;
 }
 
 input[type="text"],
@@ -220,5 +219,43 @@ select {
 
   &:focus {
     border-color: var(--figma-color-bg-brand);
+  }
+}
+
+
+.type-selector {
+  label {
+    display: flex;
+    flex: 1;
+    margin-bottom: 0;
+    align-items: center;
+    font-size: .6875rem;
+    font-weight: 400;
+    height: 1.5rem;
+    letter-spacing: .00344rem;
+    line-height: 1rem;
+
+    input {
+      &[type="checkbox"] {
+        appearance: none;
+        background-position: center center;
+        background-size: 8px 8px;
+        border-color: var(--figma-color-border);
+        border-radius: 2px;
+        border-style: solid;
+        border-width: 1px;
+        cursor: pointer;
+        height: var(--s-12);
+        margin: 0;
+        padding: 0;
+        width: var(--s-12);
+
+        &:checked {
+          background-color: var(--figma-color-bg-brand);
+          background-image: url("data:image/svg+xml,%3csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.5 3.5L5 8L2.5 5.5' stroke='%23ffffff' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+          border-color: var(--figma-color-bg-brand);
+        }
+      }
+    }
   }
 }
