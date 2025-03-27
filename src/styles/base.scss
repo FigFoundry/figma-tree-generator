@@ -53,7 +53,7 @@ body {
       display: flex;
       align-items: center;
       width: 100%;
-      gap: .5rem;
+      gap: .75rem;
       padding-inline: 6px;
       padding-block: 6px;
       
@@ -69,16 +69,30 @@ body {
       
       .depth-select {
         @extend %form-field-base;
+
+        $select-arrow-light: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%235E5E5E' fill-opacity='1' fill-rule='nonzero' stroke='none' d='m3 5 3-4H0z'%3E%3C/path%3E%3C/svg%3E";
+        $select-arrow-dark: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%23BEBEBE' fill-opacity='1' fill-rule='nonzero' stroke='none' d='m3 5 3-4H0z'%3E%3C/path%3E%3C/svg%3E";
+
         width: auto;
+        appearance: none;
         height: 1.5rem;
         padding-right: 1.5rem;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%235E5E5E' fill-opacity='1' fill-rule='nonzero' stroke='none' d='m3 5 3-4H0z'%3E%3C/path%3E%3C/svg%3E");
+        background-image: url($select-arrow-light);
         background-position: right 0.7rem center;
         background-repeat: no-repeat;
         background-size: .65em auto;
+        border-radius: var(--s-06);
 
         margin: 0;
         align-self: center;
+
+        .figma-dark & {
+          background-image: url($select-arrow-dark);
+        }
+      
+        &:focus {
+          border-color: var(--figma-color-bg-brand);
+        }
       }
       
       .type-selector {
@@ -93,7 +107,7 @@ body {
         color: var(--figma-color-text-onbrand);
         border: none;
         border-radius: .3125rem;
-        font-weight: 500;
+        font-weight: 400;
         cursor: pointer;
         width: 4.5rem;
         height: 1.5rem;
@@ -143,8 +157,8 @@ body {
         }
 
         &::selection {
-          background-color: var(--figma-color-bg-brand);
-          color: var(--figma-color-text-onbrand);
+          background-color: var(--figma-color-bg-onselected);
+          color: var(--figma-color-text-onselected);
         }
       }
 
@@ -153,7 +167,7 @@ body {
         bottom: 0.75rem;
         right: 0.75rem;
         background-color: var(--figma-color-bg);
-        color: var(--figma-color-text);
+        color: var(--figma-color-icon);
         border: 1px solid var(--figma-color-border);
         padding: var(--s-04);
         border-radius: .3125rem;
@@ -216,28 +230,6 @@ body {
 input[type="text"],
 select {
   @extend %form-field-base;
-}
-
-select {
-  $select-arrow-light: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%235E5E5E' fill-opacity='1' fill-rule='nonzero' stroke='none' d='m3 5 3-4H0z'%3E%3C/path%3E%3C/svg%3E";
-  $select-arrow-dark: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath fill='%23BEBEBE' fill-opacity='1' fill-rule='nonzero' stroke='none' d='m3 5 3-4H0z'%3E%3C/path%3E%3C/svg%3E";
-
-  appearance: none;
-  background-image: url($select-arrow-light);
-  background-position: right 0.7rem center;
-  background-repeat: no-repeat;
-  background-size: .65em auto;
-  border-radius: .3125rem;
-  margin-bottom: var(--s-12);
-  padding-right: var(--s-02);
-
-  .figma-dark & {
-    background-image: url($select-arrow-dark);
-  }
-
-  &:focus {
-    border-color: var(--figma-color-bg-brand);
-  }
 }
 
 
