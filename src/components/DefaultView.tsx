@@ -105,35 +105,38 @@ const DefaultView: React.FC = () => {
                 onClick={handleCopyClick}
               >
                 {copySuccess ? (
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="green" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="#4CAF50"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
+                    strokeWidth="1.5"
+                    d="m5 13 5 5 9-11"
+                  />
+                </svg>
                 ) : (
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
-                  >
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
+                    strokeMiterlimit="10"
+                    strokeWidth="1.5"
+                    d="M6 15h-.6C4.07 15 3 13.93 3 12.6V5.4C3 4.07 4.07 3 5.4 3h7.2C13.93 3 15 4.07 15 5.4V6m-3.6 3h7.2a2.4 2.4 0 0 1 2.4 2.4v7.2a2.4 2.4 0 0 1-2.4 2.4h-7.2A2.4 2.4 0 0 1 9 18.6v-7.2A2.4 2.4 0 0 1 11.4 9"
+                  />
+                </svg>
                 )}
               </button>
               <textarea 
