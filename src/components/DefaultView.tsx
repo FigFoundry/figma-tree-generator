@@ -113,7 +113,7 @@ const DefaultView: React.FC = () => {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    stroke="#4CAF50"
+                    stroke="var(--figma-color-icon-success)"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="1.5"
@@ -129,7 +129,7 @@ const DefaultView: React.FC = () => {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    stroke="#fff"
+                    stroke="var(--figma-color-icon)"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeMiterlimit="10"
