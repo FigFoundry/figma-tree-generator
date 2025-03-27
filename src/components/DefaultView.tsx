@@ -91,7 +91,7 @@ const DefaultView: React.FC = () => {
             onClick={handleGenerateClick}
             disabled={isLoading}
           >
-            {isLoading ? 'Generating...' : 'Generate'}
+            {isLoading ? '...' : 'Generate'}
           </button>
         </div>
       </section>
