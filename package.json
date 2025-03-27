@@ -1,7 +1,7 @@
 {
   "name": "figma-tree-generator",
   "version": "0.1.0",
-  "description": "",
+  "description": "Generate a tree structure from the selected page, component, frame, or group.",
   "type": "module",
   "main": "dist/canvas.js",
   "scripts": {
