@@ -1,4 +1,4 @@
-figma.showUI(__html__, { themeColors: true, width: 280, height: 431 });
+figma.showUI(__html__, { themeColors: true, width: 300, height: 400 });
 
 // Message handler for plugin communications
 figma.ui.onmessage = async (msg) => {

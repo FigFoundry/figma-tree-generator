@@ -131,13 +131,21 @@ body {
         overflow: auto;
         background-color: var(--figma-color-bg-secondary);
         color: var(--figma-color-text);
-
+        font-family: var(--monospace);
         -webkit-font-smoothing: antialiased;
-        font-family: Roboto Mono, Monaco, Courier New, monospace;
         font-weight: 400;
-        font-size: 11px;
-        line-height: 13px;
+        font-size: .688rem;
+        line-height: .688rem;
         letter-spacing: .005em;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::selection {
+          background-color: var(--figma-color-bg-brand);
+          color: var(--figma-color-text-onbrand);
+        }
       }
 
       .copy-button {
@@ -203,15 +211,6 @@ body {
       }
     }
   }
-}
-
-textarea {
-  font-family: var(--monospace);
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  font-size: .688rem;
-  line-height: .688rem;
-  letter-spacing: .005em;
 }
 
 input[type="text"],
